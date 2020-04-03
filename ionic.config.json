@@ -1,5 +1,7 @@
 {
   "name": "tictactoe",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

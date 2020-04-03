@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="tertiary" >
     <ion-title>
-      Blank
+      TicTacToe
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding masters" [fullscreen]="true">
+  <div class="but">
+    <h1 class="ngjyra">Current Player: {{ player }} </h1>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="but">
+    <ion-button class="ngjyra" fill="outline" color="warning" (click)="newGame()">Start new Game</ion-button>
+  </div>
+
+<div class="but">
+  <h2 class="ngjyra" *ngIf="winner">Player {{ winner }} won the game!</h2>
+</div>
+  
+  
+  <div class="but">
+    <main>
+      <app-square  *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+      </app-square>
+    </main>
   </div>
 </ion-content>
